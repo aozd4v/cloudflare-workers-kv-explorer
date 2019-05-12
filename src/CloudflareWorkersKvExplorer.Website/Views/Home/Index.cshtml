@@ -1,0 +1,30 @@
+﻿@model CloudflareWorkersKvExplorer.Website.Models.CloudflareCredentialsModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <form asp-action="SubmitCredentials" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" required="required" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApiKey" class="control-label"></label>
+                <input asp-for="ApiKey" class="form-control" required="required" />
+                <span asp-validation-for="ApiKey" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AccountId" class="control-label"></label>
+                <input asp-for="AccountId" class="form-control" required="required" />
+                <span asp-validation-for="AccountId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

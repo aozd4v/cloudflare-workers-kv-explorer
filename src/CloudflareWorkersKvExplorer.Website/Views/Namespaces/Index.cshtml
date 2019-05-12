@@ -1,0 +1,77 @@
+﻿@model IEnumerable<CloudflareWorkersKv.Client.Models.Namespaces.Namespace>
+
+@{
+    ViewBag.Title = "Namespaces";
+    Layout = "_Layout";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active" aria-current="page">Namespaces</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <h2>Namespaces</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Options</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var ns in Model)
+            {
+                <tr>
+                    <td scope="row">@ns.Title</td>
+                    <td>
+                        <a class="btn btn-light" href="@Url.Action("ViewNamespace", "Namespaces", new {Id = ns.Id})">View</a>
+                        <a class="btn btn-light" href="@Url.Action("Edit", "Namespaces", new {Id = ns.Id})">Edit</a>
+                        <a class="btn btn-danger btn-namespace-delete" data-id="@ns.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <a class="btn btn-success" href="@Url.Action("Edit", "Namespaces")">Create</a>
+    </div>
+</div>
+<script>
+    'use strict';
+
+    window.addEventListener('load', function () {
+        var elements = document.querySelectorAll('.btn-namespace-delete');
+
+        elements.forEach(e => {
+            e.addEventListener('click', (evt) => {
+                var element = evt.target;
+                var id = element.getAttribute('data-id');
+
+                fetch('/Namespaces/' + id, {
+                    method: "DELETE",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    credentials: "same-origin"
+                }).then(() => {
+                    window.location.reload(false);
+                }, (error) => {
+                    console.error(error);
+                });
+            });
+        });
+    });
+</script>

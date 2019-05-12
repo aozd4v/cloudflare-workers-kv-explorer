@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Cloudflare Workers KV Explorer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Cloudflare Workers KV Explorer</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    <footer class="footer text-muted">
+        <div class="container">
+            This site and the products and services offered on this site is in no way sponsored, affiliated, endorsed or administered by, or associated with, Cloudflare. As well as related names, marks, emblems and images are registered trademarks of Cloudflare, Inc.
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
