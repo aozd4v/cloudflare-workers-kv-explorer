@@ -1,4 +1,54 @@
-﻿.body-content {
+﻿body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.body-content {
     padding-bottom: 15px;
     padding-top: 15px;
+}
+
+.breadcrumb {
+    margin: 0 0 20px 0;
+}
+
+.footer {
+    font-size: 0.9em;
+    margin-top: 40px;
+}
+
+.footer-icon {
+    margin-right: 5px;
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-list > li {
+    margin-bottom: 10px;
+}
+
+.navbar {
+    background-color: #f4f8fc;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.navbar-brand,
+.navbar-brand:active,
+.navbar-brand:hover,
+.navbar-brand:visited {
+    color: #f58220;
+    font-size: 2em;
+    font-weight: 300;
+}
+
+.title {
+    margin: 20px 0 20px 0;
+}
+
+.uk-icon {
+    margin-bottom: 2.5px;
+    height: 13px;
 }
