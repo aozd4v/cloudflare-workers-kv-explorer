@@ -10,5 +10,5 @@ script:
   - dotnet build
   - dotnet publish -c Release
   - export SSHPASS=$DEPLOYMENT_SECRET
-  - sshpass -e scp -o StrictHostKeyChecking=no -P 22 -r src/CloudflareWorkersKvExplorer.Website/bin/Release/netcoreapp2.2/publish/* $USER@$SERVER_IP:/var/www/cloudflare-workers-kv-explorer
+  - sshpass -e scp -o StrictHostKeyChecking=no -P 22 -r src/CloudflareWorkersKvExplorer.Website/bin/Release/netcoreapp2.1/publish/* $USER@$SERVER_IP:/var/www/cloudflare-workers-kv-explorer
   - sshpass -e ssh -p 22 $USER@$SERVER_IP sudo supervisorctl restart cloudflare_workers_kv_explorer
