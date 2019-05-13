@@ -36,7 +36,7 @@
                     <td>
                         <a class="btn btn-light" href="@Url.Action("ViewNamespace", "Namespaces", new {Id = ns.Id})">View</a>
                         <a class="btn btn-light" href="@Url.Action("Edit", "Namespaces", new {Id = ns.Id})">Edit</a>
-                        <a class="btn btn-danger btn-namespace-delete" data-id="@ns.Id">Delete</a>
+                        <a class="btn btn-danger btn-namespace-delete" data-id="@ns.Id"><i class="fas fa-trash-alt"></i> Delete</a>
                     </td>
                 </tr>
             }
