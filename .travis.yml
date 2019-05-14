@@ -1,7 +1,8 @@
+dist: bionic
 language: csharp
 solution: CloudflareWorkersKvExplorer.sln
 mono: none
-dotnet: 2.1.502
+dotnet: 2.2.105
 before_script:
   - sudo apt install openssh-server
   - sudo apt-get install sshpass
